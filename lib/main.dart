@@ -1,6 +1,7 @@
 // main.dart
 import 'package:flutter/material.dart';
-import 'landingPage.dart'; // Import the LandingPage from landingPage.dart
+import 'LoginPage.dart';
+import 'LandingPage.dart'; // Import the LandingPage from landingPage.dart
 
 void main() {
   runApp(const MainApp());
@@ -26,7 +27,10 @@ class WelcomePage extends StatelessWidget {
     Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const LandingPage()),
+        MaterialPageRoute(
+            builder: (context) =>
+                const LoginPage()), // Until we done everything else dont uncomment
+        //MaterialPageRoute(builder: (context) => const LandingPage()), // delete when done
       );
     });
 

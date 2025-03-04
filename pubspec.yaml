@@ -9,14 +9,23 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_maps_flutter: ^2.2.0
+  permission_handler: ^11.3.1
+  geolocator: ^13.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true
   assets:
     - assets/logo.png
     - assets/Group 338.png
+    - assets/workshops/workshop1.png
+    - assets/workshops/workshop2.png
+    - assets/workshops/workshop3.png
+    - assets/workshops/workshop4.png
+    - assets/workshops/workshop5.png
+    - assets/workshops/workshop6.png
