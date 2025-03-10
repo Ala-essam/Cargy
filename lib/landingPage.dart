@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-// Import other pages (if they are in separate files)
+// Import other pages
 import 'EmergencyPage.dart';
 import 'MapPage.dart';
 import 'ReelsPage.dart';
 import 'ReportsPage.dart';
 import 'ProfilePage.dart';
+import 'CommunityPage.dart'; // Import the new Community Page
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -42,7 +43,6 @@ class _LandingPageState extends State<LandingPage> {
         elevation: 0,
         title: Row(
           children: [
-            // Column for the text
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -63,8 +63,7 @@ class _LandingPageState extends State<LandingPage> {
                 ),
               ],
             ),
-            const Spacer(), // Add space between the text and the icon
-            // IconButton for profile navigation
+            const Spacer(),
             IconButton(
               icon: const Icon(Icons.person, color: Colors.black),
               onPressed: () {
@@ -105,11 +104,24 @@ class _LandingPageState extends State<LandingPage> {
           ),
         ],
       ),
+      floatingActionButton: _selectedIndex == 0 // Show only on Home Page
+          ? FloatingActionButton(
+              backgroundColor: Colors.red,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const CommunityPage()),
+                );
+              },
+              child: const Icon(Icons.chat, color: Colors.white),
+            )
+          : null,
     );
   }
 }
 
-// Home Content (same as the original LandingPage content)
+// Home Content
 class HomeContent extends StatelessWidget {
   const HomeContent({super.key});
 
@@ -121,16 +133,14 @@ class HomeContent extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Replaced Section
             SizedBox(
-              width: double.infinity, // Make the container take 100% width
+              width: double.infinity,
               child: Image.asset(
-                'assets/Group 338.png', // Path to your logo image
-                fit: BoxFit.cover, // Ensure the image scales to fit the width
+                'assets/Group 338.png',
+                fit: BoxFit.cover,
               ),
             ),
             const SizedBox(height: 20),
-            // Experience Top Services Section
             const Text(
               'Experience Top Services for Your Vehicle Today',
               style: TextStyle(
@@ -140,8 +150,6 @@ class HomeContent extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-
-            // Posts Section
             const Text(
               'Posts',
               style: TextStyle(
@@ -152,24 +160,24 @@ class HomeContent extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             _buildPost(
-              'Ahmed Amar and 12 other liked your post',
+              'Ahmed Amar and 12 others liked your post',
               'Can someone help me change my tire? I\'m in a Toyota Corolla 2019 near Abdoun Circle. I have a spare but no tools.',
               '13 Likes  4 Comments',
-              'assets/profile1.png', // Add profile picture path
+              'assets/Ellipse1.png',
             ),
             const SizedBox(height: 16),
             _buildPost(
-              'Nada Ahmad and 28 other liked your post',
+              'Nada Ahmad and 28 others liked your post',
               'Tesla Model3 2020 won\'t start, and I don\'t have cables. Anyone close by who can help me jumpstart?',
               '29 Likes  6 Comments',
-              'assets/profile2.png', // Add profile picture path
+              'assets/Ellipse2.png',
             ),
             const SizedBox(height: 16),
             _buildPost(
-              'Mahmoud Jad and 23 other liked your post',
+              'Mahmoud Jad and 23 others liked your post',
               'Hyundai Tucson 2021 brakes are making a squealing sound. Could this be serious? Any recommendations for nearby shops?',
               '24 Likes  16 Comments',
-              'assets/profile3.png', // Add profile picture path
+              'assets/Ellipse3.png',
             ),
           ],
         ),
@@ -187,14 +195,11 @@ class HomeContent extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Profile Picture
             CircleAvatar(
-              radius: 25, // 50x50 size
-              backgroundImage:
-                  AssetImage(profilePic), // Path to profile picture
+              radius: 25,
+              backgroundImage: AssetImage(profilePic),
             ),
-            const SizedBox(width: 16), // Add spacing
-            // Post Content
+            const SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

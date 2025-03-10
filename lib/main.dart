@@ -24,7 +24,7 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Simulate a loading delay and navigate to the landing page
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 4), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(

@@ -12,6 +12,7 @@ dependencies:
   google_maps_flutter: ^2.2.0
   permission_handler: ^11.3.1
   geolocator: ^13.0.2
+  video_player: ^2.4.7
 
 dev_dependencies:
   flutter_test:
@@ -22,6 +23,9 @@ flutter:
   uses-material-design: true
   assets:
     - assets/logo.png
+    - assets/Ellipse1.png
+    - assets/Ellipse2.png
+    - assets/Ellipse3.png
     - assets/Group 338.png
     - assets/workshops/workshop1.png
     - assets/workshops/workshop2.png
@@ -29,3 +33,10 @@ flutter:
     - assets/workshops/workshop4.png
     - assets/workshops/workshop5.png
     - assets/workshops/workshop6.png
+    - assets/logos/toyota.png
+    - assets/logos/hyundai.png
+    - assets/logos/tesla.png
+    - assets/logos/bmw.png
+    - assets/videos/ForBiggerBlazes.mp4
+    - assets/videos/ForBiggerEscapes.mp4
+    - assets/videos/ForBiggerJoyrides.mp4
